@@ -1,0 +1,5 @@
+com.mericle.weather
+com.mericle.weather.airnow.alarm
+com.mericle.weather.airnow.model
+com.mericle.weather.airnow.service
+com.mericle.weather.util

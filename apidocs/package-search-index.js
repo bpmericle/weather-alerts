@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.mericle.weather"},{"l":"com.mericle.weather.airnow.alarm"},{"l":"com.mericle.weather.airnow.model"},{"l":"com.mericle.weather.airnow.service"},{"l":"com.mericle.weather.util"}];updateSearchResults();

@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.mericle.weather.utils","c":"DataLoader","l":"DataLoader()","u":"%3Cinit%3E()"},{"p":"com.mericle.weather.utils","c":"DataLoader","l":"loadFromFile(String)","u":"loadFromFile(java.lang.String)"}];updateSearchResults();
