@@ -16,6 +16,8 @@ public enum AQI {
     public String color;
     public String hexColor;
     public int index;
+    public String issuedDate;
+    public String forecastDate;
     public String parameterName;
     public boolean actionDay;
 
@@ -71,6 +73,18 @@ public enum AQI {
         sb.append("hexColor");
         sb.append('=');
         sb.append(((this.hexColor == null) ? "<null>" : this.hexColor));
+        sb.append(',');
+        sb.append("index");
+        sb.append('=');
+        sb.append(this.index);
+        sb.append(',');
+        sb.append("issuedDate");
+        sb.append('=');
+        sb.append(((this.issuedDate == null) ? "<null>" : this.issuedDate));
+        sb.append(',');
+        sb.append("forecastDate");
+        sb.append('=');
+        sb.append(((this.forecastDate == null) ? "<null>" : this.forecastDate));
         sb.append(',');
         sb.append("parameterName");
         sb.append('=');
