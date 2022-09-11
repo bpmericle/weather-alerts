@@ -1,0 +1,98 @@
+[
+    {
+        "DateIssue": "2022-09-04 ",
+        "DateForecast": "2022-09-05 ",
+        "ReportingArea": "Dallas-Fort Worth",
+        "StateCode": "TX",
+        "Latitude": 32.767,
+        "Longitude": -96.783,
+        "ParameterName": "O3",
+        "AQI": -1,
+        "Category": {
+            "Number": 3,
+            "Name": "Unhealthy for Sensitive Groups"
+        },
+        "ActionDay": true,
+        "Discussion": "https://www.tceq.texas.gov/airquality/monops/forecast_today.html"
+    },
+    {
+        "DateIssue": "2022-09-04 ",
+        "DateForecast": "2022-09-05 ",
+        "ReportingArea": "Dallas-Fort Worth",
+        "StateCode": "TX",
+        "Latitude": 32.767,
+        "Longitude": -96.783,
+        "ParameterName": "PM2.5",
+        "AQI": -1,
+        "Category": {
+            "Number": 1,
+            "Name": "Good"
+        },
+        "ActionDay": false,
+        "Discussion": "https://www.tceq.texas.gov/airquality/monops/forecast_today.html"
+    },
+    {
+        "DateIssue": "2022-09-04 ",
+        "DateForecast": "2022-09-05 ",
+        "ReportingArea": "Dallas-Fort Worth",
+        "StateCode": "TX",
+        "Latitude": 32.767,
+        "Longitude": -96.783,
+        "ParameterName": "PM10",
+        "AQI": -1,
+        "Category": {
+            "Number": 1,
+            "Name": "Good"
+        },
+        "ActionDay": false,
+        "Discussion": "https://www.tceq.texas.gov/airquality/monops/forecast_today.html"
+    },
+    {
+        "DateIssue": "2022-09-04 ",
+        "DateForecast": "2022-09-06 ",
+        "ReportingArea": "Dallas-Fort Worth",
+        "StateCode": "TX",
+        "Latitude": 32.767,
+        "Longitude": -96.783,
+        "ParameterName": "O3",
+        "AQI": -1,
+        "Category": {
+            "Number": 2,
+            "Name": "Moderate"
+        },
+        "ActionDay": false,
+        "Discussion": "https://www.tceq.texas.gov/airquality/monops/forecast_today.html"
+    },
+    {
+        "DateIssue": "2022-09-04 ",
+        "DateForecast": "2022-09-06 ",
+        "ReportingArea": "Dallas-Fort Worth",
+        "StateCode": "TX",
+        "Latitude": 32.767,
+        "Longitude": -96.783,
+        "ParameterName": "PM2.5",
+        "AQI": -1,
+        "Category": {
+            "Number": 1,
+            "Name": "Good"
+        },
+        "ActionDay": false,
+        "Discussion": "https://www.tceq.texas.gov/airquality/monops/forecast_today.html"
+    },
+    {
+        "DateIssue": "2022-09-04 ",
+        "DateForecast": "2022-09-06 ",
+        "ReportingArea": "Dallas-Fort Worth",
+        "StateCode": "TX",
+        "Latitude": 32.767,
+        "Longitude": -96.783,
+        "ParameterName": "PM10",
+        "AQI": -1,
+        "Category": {
+            "Number": 1,
+            "Name": "Good"
+        },
+        "ActionDay": false,
+        "Discussion": "https://www.tceq.texas.gov/airquality/monops/forecast_today.html"
+    }
+]
