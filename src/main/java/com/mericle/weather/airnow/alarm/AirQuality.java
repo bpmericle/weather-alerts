@@ -95,6 +95,7 @@ public class AirQuality {
                     .append("</p>")
                     .append("</div>");
         }
+        
         return String.format(CONTENT_TEMPLATE, builder.toString());
     }
 }

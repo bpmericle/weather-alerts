@@ -1,0 +1,76 @@
+{
+    "data": {
+        "timelines": [
+            {
+                "timestep": "1h",
+                "endTime": "2022-09-12T03:00:00Z",
+                "startTime": "2022-09-11T21:00:00Z",
+                "intervals": [
+                    {
+                        "startTime": "2022-09-11T21:00:00Z",
+                        "values": {
+                            "temperature": 80.83,
+                            "temperatureApparent": 81.72,
+                            "uvHealthConcern": 1,
+                            "uvIndex": 3
+                        }
+                    },
+                    {
+                        "startTime": "2022-09-11T22:00:00Z",
+                        "values": {
+                            "temperature": 80.64,
+                            "temperatureApparent": 81.4,
+                            "uvHealthConcern": 0,
+                            "uvIndex": 1
+                        }
+                    },
+                    {
+                        "startTime": "2022-09-11T23:00:00Z",
+                        "values": {
+                            "temperature": 80.47,
+                            "temperatureApparent": 81.02,
+                            "uvHealthConcern": 0,
+                            "uvIndex": 0
+                        }
+                    },
+                    {
+                        "startTime": "2022-09-12T00:00:00Z",
+                        "values": {
+                            "temperature": 78.11,
+                            "temperatureApparent": 78.11,
+                            "uvHealthConcern": 0,
+                            "uvIndex": 0
+                        }
+                    },
+                    {
+                        "startTime": "2022-09-12T01:00:00Z",
+                        "values": {
+                            "temperature": 75.04,
+                            "temperatureApparent": 75.04,
+                            "uvHealthConcern": 0,
+                            "uvIndex": 0
+                        }
+                    },
+                    {
+                        "startTime": "2022-09-12T02:00:00Z",
+                        "values": {
+                            "temperature": 73.26,
+                            "temperatureApparent": 73.26,
+                            "uvHealthConcern": 0,
+                            "uvIndex": 0
+                        }
+                    },
+                    {
+                        "startTime": "2022-09-12T03:00:00Z",
+                        "values": {
+                            "temperature": 71.51,
+                            "temperatureApparent": 71.51,
+                            "uvHealthConcern": 0,
+                            "uvIndex": 0
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

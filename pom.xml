@@ -54,6 +54,7 @@
     <gson.version>2.9.1</gson.version>
     <mail.version>1.6.2</mail.version>
     <logback.version>1.4.0</logback.version>
+    <lombok.version>1.18.24</lombok.version>
     <junit.version>5.9.0</junit.version>
     <mockito.version>4.7.0</mockito.version>
   </properties>
@@ -83,6 +84,12 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
