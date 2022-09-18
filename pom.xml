@@ -186,6 +186,29 @@
     </pluginManagement>
     <plugins>
       <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-jar</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>/Users/brianmericle/Personal/weather/alerts</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.build.directory}</directory>
+                  <includes>
+                    <include>${project.build.finalName}.jar</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
       </plugin>
       <plugin>
