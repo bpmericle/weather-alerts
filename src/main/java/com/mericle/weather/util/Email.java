@@ -51,7 +51,10 @@ public class Email {
 
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress(from));
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+        for (String toEmail : to.split(",")) {
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+        }
         message.setSubject(subject);
 
         MimeBodyPart htmlPart = new MimeBodyPart();

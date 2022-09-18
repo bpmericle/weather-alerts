@@ -1,6 +1,8 @@
 package com.mericle.weather.tomorrow.alarm;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -89,9 +91,9 @@ public class TemperatureApparent {
             String dateDisplay = trigger.getDate();
 
             try {
-                LocalDateTime localDateTime = LocalDateTime.parse(trigger.getDate(),
-                        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ"));
-                dateDisplay = DateTimeFormatter.RFC_1123_DATE_TIME.format(localDateTime);
+                OffsetDateTime localDateTime = Instant.parse(trigger.getDate()).atZone(ZoneId.systemDefault())
+                        .toOffsetDateTime();
+                dateDisplay = DateTimeFormatter.ofPattern("ha 'on' EEE, MMM dd, yyyy").format(localDateTime);
             } catch (DateTimeParseException e) {
                 LOGGER.warn("Unable to parse date={}", dateDisplay, e);
             }
@@ -99,13 +101,13 @@ public class TemperatureApparent {
             builder.append(
                     String.format("<div style=\"background-color:#%s;color:white;padding:10px;margin-bottom:5px;\">",
                             "ff0000"))
-                    .append("<p><span class='key'>Issued Date:</span> ")
+                    .append("<p><span class='key'>Issued For:</span> ")
                     .append(dateDisplay)
                     .append("</p>")
                     .append("<p><span class='key'>Temperature:</span> ")
                     .append(trigger.getTemperature()).append(" &#8457;")
                     .append("</p>")
-                    .append("<p><span class='key'>Apparent Temperature:</span> ")
+                    .append("<p><span class='key'>Temperature (Apparent):</span> ")
                     .append(trigger.getTemperatureApparent()).append(" &#8457;")
                     .append("</p>")
                     .append("<p><span class='key'>UV Index:</span> ")
