@@ -15,11 +15,6 @@ public enum AQI {
     public String description;
     public String color;
     public String hexColor;
-    public int index;
-    public String issuedDate;
-    public String forecastDate;
-    public String parameterName;
-    public boolean actionDay;
 
     private AQI() {
     }
@@ -59,9 +54,6 @@ public enum AQI {
         sb.append('=');
         sb.append(this.category);
         sb.append(',');
-        sb.append("AQI");
-        sb.append('=');
-        sb.append(this.index);
         sb.append("description");
         sb.append('=');
         sb.append(((this.description == null) ? "<null>" : this.description));
@@ -73,26 +65,6 @@ public enum AQI {
         sb.append("hexColor");
         sb.append('=');
         sb.append(((this.hexColor == null) ? "<null>" : this.hexColor));
-        sb.append(',');
-        sb.append("index");
-        sb.append('=');
-        sb.append(this.index);
-        sb.append(',');
-        sb.append("issuedDate");
-        sb.append('=');
-        sb.append(((this.issuedDate == null) ? "<null>" : this.issuedDate));
-        sb.append(',');
-        sb.append("forecastDate");
-        sb.append('=');
-        sb.append(((this.forecastDate == null) ? "<null>" : this.forecastDate));
-        sb.append(',');
-        sb.append("parameterName");
-        sb.append('=');
-        sb.append(((this.parameterName == null) ? "<null>" : this.parameterName));
-        sb.append(',');
-        sb.append("actionDay");
-        sb.append('=');
-        sb.append(this.actionDay);
         if (sb.charAt((sb.length() - 1)) == ',') {
             sb.setCharAt((sb.length() - 1), ']');
         } else {

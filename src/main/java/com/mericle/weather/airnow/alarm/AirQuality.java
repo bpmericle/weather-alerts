@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.mericle.weather.airnow.model.AQI;
 import com.mericle.weather.airnow.model.Forecast;
+import com.mericle.weather.airnow.model.Trigger;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,31 +36,34 @@ public class AirQuality {
             "    </body>" +
             "</html>";
 
-    private List<AQI> aqis;
+    private List<Trigger> triggers;
 
     public boolean isTriggered(Forecast[] forecast) {
-        aqis = new ArrayList<>();
+        triggers = new ArrayList<>();
         for (Forecast f : forecast) {
             LOGGER.debug("inspecting forecast={}", f);
 
             AQI aqi = AQI.byCategory(f.getCategory().getNumber());
             if (aqi.category >= ALARM_THRESHOLD) {
-                aqi.index = f.getAqi();
-                aqi.parameterName = f.getParameterName();
-                aqi.actionDay = f.isActionDay();
-                aqi.issuedDate = f.getDateIssue();
-                aqi.forecastDate = f.getDateForecast();
+                Trigger trigger = Trigger.builder()
+                        .aqi(aqi)
+                        .index(f.getAqi())
+                        .issuedDate(f.getDateIssue())
+                        .forecastDate(f.getDateForecast())
+                        .parameterName(f.getParameterName())
+                        .actionDay(f.isActionDay())
+                        .build();
 
                 LOGGER.debug("air quality triggered on {}", aqi);
-                aqis.add(aqi);
+                triggers.add(trigger);
             }
         }
 
-        return !aqis.isEmpty();
+        return !triggers.isEmpty();
     }
 
     public String getReportSubject() {
-        if (aqis.isEmpty()) {
+        if (triggers.isEmpty()) {
             return "";
         }
 
@@ -66,36 +71,36 @@ public class AirQuality {
     }
 
     public String getReportContent() {
-        if (aqis.isEmpty()) {
+        if (triggers.isEmpty()) {
             return "";
         }
 
         StringBuilder builder = new StringBuilder();
 
-        for (AQI aqi : aqis) {
+        for (Trigger trigger : triggers) {
             builder.append(
                     String.format("<div style=\"background-color:#%s;color:white;padding:10px;margin-bottom:5px;\">",
-                            aqi.hexColor))
+                            trigger.getAqi().hexColor))
                     .append("<p><span class='key'>Issued Date:</span> ")
-                    .append(aqi.issuedDate)
+                    .append(trigger.getIssuedDate())
                     .append("</p>")
                     .append("<p><span class='key'>Forecast Date:</span> ")
-                    .append(aqi.forecastDate)
+                    .append(trigger.getForecastDate())
                     .append("</p>");
-            if (aqi.index >= 0) {
+            if (trigger.getIndex() >= 0) {
                 builder.append("<p><span class='key'>Air Quality Index:</span> ")
-                        .append(aqi.index)
+                        .append(trigger.getIndex())
                         .append("</p>");
             }
             builder.append("<p><span class='key'>Level of Health Concern:</span> ")
-                    .append(aqi.description)
+                    .append(trigger.getAqi().description)
                     .append("</p>")
                     .append("<p><span class='key'>Triggered By:</span> ")
-                    .append(aqi.parameterName)
+                    .append(trigger.getParameterName())
                     .append("</p>")
                     .append("</div>");
         }
-        
+
         return String.format(CONTENT_TEMPLATE, builder.toString());
     }
 }
