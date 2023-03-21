@@ -44,6 +44,8 @@ public class AirQuality {
             LOGGER.debug("inspecting forecast={}", f);
 
             AQI aqi = AQI.byCategory(f.getCategory().getNumber());
+            LOGGER.info("Comparing AQI: {} to threshold: {} for forecast date: {}", aqi.category, ALARM_THRESHOLD,
+                    f.getDateForecast());
             if (aqi.category >= ALARM_THRESHOLD) {
                 Trigger trigger = Trigger.builder()
                         .aqi(aqi)
