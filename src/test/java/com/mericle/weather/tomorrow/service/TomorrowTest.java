@@ -29,6 +29,10 @@ class TomorrowTest {
     private static final String latitude = "33.123753";
     private static final String longitude = "-97.184547";
 
+    // Dummy values for the constructor
+    private static final String API_PATTERN = "https://api.example.com/timelines?apikey=%s&lat=%s&lon=%s";
+    private static final String API_KEY = "dummy-api-key";
+
     @Mock
     private HttpClient mockHttpClient;
 
@@ -50,7 +54,8 @@ class TomorrowTest {
             when(mockHttpClient.send(any(HttpRequest.class), ArgumentMatchers.<BodyHandler<String>>any()))
                     .thenReturn(mockResponse);
 
-            Tomorrow tomorrow = new Tomorrow(mockHttpClient);
+            // Pass API_PATTERN and API_KEY into the constructor
+            Tomorrow tomorrow = new Tomorrow(API_PATTERN, API_KEY, mockHttpClient);
             Timelines timelines = tomorrow.retrieveTimelines(latitude, longitude);
 
             verify(mockResponse).statusCode();
